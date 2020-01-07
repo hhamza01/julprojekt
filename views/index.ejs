@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="sv">
+<meta charset="utf-8">
+<head>
+  <title> Årens julklappar </title>
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="/js/random_julklapp.js"></script>
+
+  <audio src="/desktop/jb.mp3" controls>
+  </audio>
+
+
+
+<div id="header"> Välj årets julklapp </div>
+
+<div id="body">
+
+  <!-- Med ejs kan du skriva javascript kod här i med speciella tagar -->
+
+
+  <% julklappar.forEach(julklapp => { %>  <!-- en loop som loopar utfrån julklappar som blir skickad från server.js -->
+    <%- include('partials/julklapp', { julklapp: julklapp }); %  <!-- skickar iväg alla julklapapr till julklapp.ejs -->
+  <% }); %>
+
+  <button class="button" onclick="slumpaJulklapp()">Hitta din julklapp</button>
+</div>
+
+<div class="snowflakes" aria-hidden="true">
+  <div class="snowflake">
+  ⚪
+  </div>
+  <div class="snowflake">
+  ⚪
+  </div>
+  <div class="snowflake">
+  ⚪
+  </div>
+  <div class="snowflake">
+  ⚪
+  </div>
+  <div class="snowflake">
+  ⚪
+  </div>
+  <div class="snowflake">
+   ⚪
+  </div>
+  <div class="snowflake">
+  ⚪
+  </div>
+  <div class="snowflake">
+  ⚪
+  </div>
+  </div>
+</div>
+</body>
